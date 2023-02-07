@@ -1,0 +1,206 @@
+[
+  {
+    "id": "navbar.auth.signIn",
+    "defaultMessage": "Sign in"
+  },
+  {
+    "id": "navbar.ccIconLink.title",
+    "defaultMessage": "Creative Cloud"
+  },
+  {
+    "id": "navbar.stockLogo.link.ariaLabel",
+    "defaultMessage": "Return to Adobe Stock's homepage"
+  },
+  {
+    "id": "navbar.leftlinks.photos.title",
+    "defaultMessage": "Photos"
+  },
+  {
+    "id": "navbar.leftlinks.photos.text",
+    "defaultMessage": "Photos"
+  },
+  {
+    "id": "navbar.leftlinks.illustrations.title",
+    "defaultMessage": "Illustrations"
+  },
+  {
+    "id": "navbar.leftlinks.illustrations.text",
+    "defaultMessage": "Illustrations"
+  },
+  {
+    "id": "navbar.leftlinks.vectors.title",
+    "defaultMessage": "Vectors"
+  },
+  {
+    "id": "navbar.leftlinks.vectors.text",
+    "defaultMessage": "Vectors"
+  },
+  {
+    "id": "navbar.leftlinks.video.title",
+    "defaultMessage": "Videos"
+  },
+  {
+    "id": "navbar.leftlinks.video.text",
+    "defaultMessage": "Videos"
+  },
+  {
+    "id": "navbar.leftlinks.audio.title",
+    "defaultMessage": "Audio"
+  },
+  {
+    "id": "navbar.leftlinks.audio.text",
+    "defaultMessage": "Audio"
+  },
+  {
+    "id": "navbar.leftlinks.more.text",
+    "defaultMessage": "More"
+  },
+  {
+    "id": "navbar.leftlinks.templates.title",
+    "defaultMessage": "Templates"
+  },
+  {
+    "id": "navbar.leftlinks.templates.text",
+    "defaultMessage": "Templates"
+  },
+  {
+    "id": "navbar.leftlinks.3d.title",
+    "defaultMessage": "3D"
+  },
+  {
+    "id": "navbar.leftlinks.3d.text",
+    "defaultMessage": "3D"
+  },
+  {
+    "id": "navbar.leftlinks.free.title",
+    "defaultMessage": "Free"
+  },
+  {
+    "id": "navbar.leftlinks.free.text",
+    "defaultMessage": "Free"
+  },
+  {
+    "id": "navbar.leftlinks.premium.title",
+    "defaultMessage": "Premium"
+  },
+  {
+    "id": "navbar.leftlinks.premium.text",
+    "defaultMessage": "Premium"
+  },
+  {
+    "id": "navbar.leftlinks.editorial.title",
+    "defaultMessage": "Editorial"
+  },
+  {
+    "id": "navbar.leftlinks.editorial.text",
+    "defaultMessage": "Editorial"
+  },
+  {
+    "id": "navbar.leftlinks.fonts.title",
+    "defaultMessage": "Fonts"
+  },
+  {
+    "id": "navbar.leftlinks.fonts.text",
+    "defaultMessage": "Fonts"
+  },
+  {
+    "id": "navbar.leftlinks.plugins.title",
+    "defaultMessage": "Plugins"
+  },
+  {
+    "id": "navbar.leftlinks.plugins.text",
+    "defaultMessage": "Plugins"
+  },
+  {
+    "id": "navbar.rightlinks.sell.text",
+    "defaultMessage": "Sell"
+  },
+  {
+    "id": "navbar.rightlinks.pricing.text",
+    "defaultMessage": "Pricing"
+  },
+  {
+    "id": "navbar.entitlement.credits",
+    "defaultMessage": "{quantity, plural, one {{quantity} Credit} other {{quantity} Credits}}"
+  },
+  {
+    "id": "navbar.entitlement.images",
+    "defaultMessage": "{quantity} Images"
+  },
+  {
+    "id": "navbar.entitlement.premium",
+    "defaultMessage": "{quantity, plural, one {{quantity} Premium Credit} other {{quantity} Premium Credits}}"
+  },
+  {
+    "id": "navbar.entitlement.unlimited",
+    "defaultMessage": "Unlimited images"
+  },
+  {
+    "id": "navbar.entitlement.videos",
+    "defaultMessage": "{quantity, plural, one {{quantity} Video} other {{quantity} Videos}}"
+  },
+  {
+    "id": "navbar.entitlement.assets",
+    "defaultMessage": "{quantity, plural, one {{quantity} Asset} other {{quantity} Assets}}"
+  },
+  {
+    "id": "navbar.entitlement.plan_credits",
+    "defaultMessage": "{quantity, plural, one {{quantity} Plan credit} other {{quantity} Plan credits}}"
+  },
+  {
+    "id": "navbar.entitlement.pack_credits",
+    "defaultMessage": "{quantity, plural, one {{quantity} Pack credit} other {{quantity} Pack credits}}"
+  },
+  {
+    "id": "navbar.entitlement.points",
+    "defaultMessage": "{quantity, plural, one {{quantity} Point} other {{quantity} Points}}"
+  },
+  {
+    "id": "navbar.phoneNumber.text",
+    "defaultMessage": "Sales: {number}"
+  },
+  {
+    "id": "navbar.phoneNumber.title",
+    "defaultMessage": "Call {number} to contact Adobe Sales"
+  },
+  {
+    "id": "navbar.getHelp.text",
+    "defaultMessage": "Get Help"
+  },
+  {
+    "id": "navbar.adobeLogoLink.title",
+    "defaultMessage": "Return to Adobe's homepage"
+  },
+  {
+    "id": "navbar.support.heading.text",
+    "defaultMessage": "SUPPORT"
+  },
+  {
+    "id": "navbar.avatar.text",
+    "defaultMessage": "Avatar"
+  },
+  {
+    "id": "navbar.profilesList.personal.label",
+    "defaultMessage": "Personal"
+  },
+  {
+    "id": "navbar.profile.settings.selected",
+    "defaultMessage": "Selected profile:"
+  },
+  {
+    "id": "navbar.profile.settings.libraries.savedto",
+    "defaultMessage": "Libraries saved to:"
+  },
+  {
+    "id": "navbar.profile.settings.change",
+    "defaultMessage": "Change"
+  },
+  {
+    "id": "navbar.profile.settings.selected.standardassets",
+    "defaultMessage": "Selected profile (Standard Assets)"
+  },
+  {
+    "id": "navbar.profile.settings.selected.otherassetstypes",
+    "defaultMessage": "Selected profile (Other Assets types)"
+  }
+]

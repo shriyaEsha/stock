@@ -1,0 +1,22 @@
+[
+  {
+    "id": "navbar.manageAccount.link",
+    "defaultMessage": "Manage Account"
+  },
+  {
+    "id": "navbar.profile.dropdown.heading",
+    "defaultMessage": "Adobe Stock"
+  },
+  {
+    "id": "navbar.licenseHistory.link",
+    "defaultMessage": "License History"
+  },
+  {
+    "id": "navbar.following.link",
+    "defaultMessage": "Following"
+  },
+  {
+    "id": "navbar.auth.signOut",
+    "defaultMessage": "Sign Out"
+  }
+]

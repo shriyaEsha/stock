@@ -33,6 +33,9 @@
   --block-spacing-m: 80px;
   --block-spacing-l: 96px;
   --block-spacing-xl: 120px;
+
+  /* Stock Navbar Height */
+  --stock-navbar-height: 58px;
 }
 
 @media screen and (min-width: 1000px) {
@@ -52,6 +55,12 @@ main video {
 
 .milo-video {
   margin: 0 0 12px;
+}
+
+/* custom header height for Stock Navbar */
+header {
+  height: var(--stock-navbar-height);
+  min-height: var(--stock-navbar-height);
 }
 
 /* buttons */

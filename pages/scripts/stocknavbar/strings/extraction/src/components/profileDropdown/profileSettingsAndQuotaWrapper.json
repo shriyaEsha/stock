@@ -1,0 +1,10 @@
+[
+  {
+    "id": "navbar.profile.settings.quota",
+    "defaultMessage": "Available quota:"
+  },
+  {
+    "id": "navbar.profile.settings.noplan",
+    "defaultMessage": "No Plan"
+  }
+]

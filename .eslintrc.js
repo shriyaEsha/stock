@@ -3,6 +3,7 @@ module.exports = {
   extends: 'airbnb-base',
   env: { browser: true },
   parser: '@babel/eslint-parser',
+  settings: { react: { version: 'detect' } },
   parserOptions: {
     allowImportExportEverywhere: true,
     sourceType: 'module',
