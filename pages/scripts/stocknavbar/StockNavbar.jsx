@@ -100,12 +100,26 @@ function StockNavbar({ intl, isGloballySafeCollectionEnabled }) {
     isGloballySafeCollectionEnabled,
   };
 
+  // read FFs from Franklin
+  // <meta name="feature-flags" content="isNavbarV2Enabled">
+  const featureFlags = document.head.getElementsByTagName('meta')['feature-flags'].content;
+  // super simple for now - assume only 1 FF is passed
+  const ffName = featureFlags.split(':')[0];
+  const ffValue = featureFlags.split(':')[1];
+
+  // Phone number
+  const phoneNumber = document.head.getElementsByTagName('meta')['phone-number'].content;
+
+  console.log(featureFlags);
   return (
     <StockNavbarFranklinWrapper
       config={appConfig}
       intl={intl}
+      {...{
+        [ffName]: eval(ffValue),
+      }}
       // Can Phone number come dynamically from Franklin? Or use set of ph nos by locale
-      // phoneNumber=""
+      phoneNumber={phoneNumber}
     />
     )
   }
