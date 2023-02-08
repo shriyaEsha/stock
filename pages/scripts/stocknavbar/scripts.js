@@ -31,7 +31,7 @@ function WrappedApp() {
   const [localizedStrings, setLocalizedStrings] = useState({});
 
   const getRouteBasename = () => {
-    const pathname = '/fr'; // const { pathname } = window.location;
+    const { pathname } = window.location;
   
     const urlParts = pathname.split('/');
     const basename = urlParts[1];

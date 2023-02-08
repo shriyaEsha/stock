@@ -71482,7 +71482,7 @@ function $7a7ee07ed9672d27$var$WrappedApp() {
     // dynamically fetch localized strings file
     const [localizedStrings, setLocalizedStrings] = (0, $6Yugf.useState)({});
     const getRouteBasename = ()=>{
-        const pathname = "/fr"; // const { pathname } = window.location;
+        const { pathname: pathname  } = window.location;
         const urlParts = pathname.split("/");
         const basename = urlParts[1];
         return (0, $5bd32afc91685086$export$dc32aee4f6b2cbbf).has(basename) ? basename : (0, $5bd32afc91685086$export$6367ad466dd96599);
