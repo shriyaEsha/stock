@@ -2,14 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import { CoreSpectrumProvider } from '@astock/core-react-spectrum/coreSpectrumProvider';
 import { CoreSpectrumV3Provider } from '@astock/core-react-spectrum/coreSpectrumV3Provider';
-// import {
-//   FeatureFlagsProvider,
-// } from '@astock/react-feature-flags';
 import { IntlProvider } from 'react-intl';
-import {
-  CoreContextProvider,
-  FEATURE_FLAGS_NAMESPACE,
-} from '@astock/core-react-context/core';
 import {
   STOCK_BASENAME_DEFAULT,
   STOCK_BASENAMES,
@@ -19,8 +12,6 @@ import STOCK_BASENAME_TO_COUNTRY from '@astock/stock-locales/basenameToCountry';
 import STOCK_BASENAMES_GSC from '@astock/stock-locales/basenames/gsc';
 import STOCK_COUNTRIES_GSC from '@astock/stock-locales/countries/gsc';
 
-import FEATURE_FLAGS from './featureFlags';
-import strings from './strings';
 import StockNavbar from './StockNavbar';
 
 function WrappedApp() {
@@ -43,7 +34,7 @@ function WrappedApp() {
 
   // get locale info from window
   const basename = getRouteBasename();
-  const languageTag = STOCK_BASENAME_TO_LANGUAGE.get(basename);
+  const languageTag = STOCK_BASENAME_TO_LANGUAGE.get(basename).toLowerCase();
   const country = STOCK_BASENAME_TO_COUNTRY.get(basename);
 
   // GSC
@@ -52,17 +43,31 @@ function WrappedApp() {
   const isGloballySafeCollectionEnabled = isGSCLocale || isGSCCountry;
 
   useEffect(() => {
-    fetch(`/pages/scripts/stocknavbar/strings/${languageTag}.json`)
-      .then(res => res.json())
-      .then(response => setLocalizedStrings(response))
-      .catch(error => console.log(error));
-  
-    // import(`/pages/scripts/stocknavbar/strings/fr-FR.js`).then(({default: strings}) => setLocalizedStrings(strings));
-  }, []);
+    const fetchLocalizedStrings = async () => {
+      try {
+         // hlx
+         const res = await fetch(`/pages/artisthub/stocknavbar/strings/${languageTag}.json`);
+        
+         if (res.status === 200) {
+           const json = await res.json();
+           const messages = {};
+           json.data.forEach((message) => {
+            messages[message.Key] = message.Text;
+          });
+           setLocalizedStrings(messages);
+         } else if (res.status === 404) {
+           // local
+           const res = await fetch(`/pages/scripts/stocknavbar/strings/${languageTag}.json`);
+           const json = await res.json();
+           setLocalizedStrings(json);
+         }
+      } catch (err) {
+        console.log(err);
+      }
+    };
 
-  const context = {
-    [FEATURE_FLAGS_NAMESPACE]: FEATURE_FLAGS,
-  };
+    fetchLocalizedStrings();
+  }, []);
 
   // Privacy & Consent for GDPR Banner
 
@@ -92,19 +97,17 @@ function WrappedApp() {
 
 if (localizedStrings) {
   return (
-    <CoreContextProvider {...context}>
-      <IntlProvider
-        locale={languageTag}
-        defaultLocale={languageTag}
-        messages={localizedStrings}
-      >
-        <CoreSpectrumProvider theme="light" toastPlacement="bottom center">
-          <CoreSpectrumV3Provider>
-            <StockNavbar isGloballySafeCollectionEnabled={isGloballySafeCollectionEnabled} />
-          </CoreSpectrumV3Provider>
-        </CoreSpectrumProvider>
-      </IntlProvider>
-    </CoreContextProvider>
+    <IntlProvider
+      locale={languageTag}
+      defaultLocale={languageTag}
+      messages={localizedStrings}
+    >
+      <CoreSpectrumProvider theme="light" toastPlacement="bottom center">
+        <CoreSpectrumV3Provider>
+          <StockNavbar isGloballySafeCollectionEnabled={isGloballySafeCollectionEnabled} />
+        </CoreSpectrumV3Provider>
+      </CoreSpectrumProvider>
+    </IntlProvider>
   );
 } 
 
@@ -112,7 +115,6 @@ if (localizedStrings) {
 }
 
 const container = document.createElement('div');
-// document.getElementsByClassName('navbar-placeholder')[0].append(container);
 document.querySelector('header').append(container);
 
 ReactDOM.render(<WrappedApp />, container);
