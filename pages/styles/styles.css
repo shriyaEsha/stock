@@ -57,10 +57,28 @@ main video {
   margin: 0 0 12px;
 }
 
+/* Custom header styles overriding Milo's Gnav */
 /* custom header height for Stock Navbar */
-header {
-  height: var(--stock-navbar-height);
-  min-height: var(--stock-navbar-height);
+header.gnav {
+  height: 58px;
+  min-height: 58px;
+}
+
+/* 
+We don't want Milo's Gnav to render 
+Even though it's just a placeholder, it takes up height
+And causes a UI glitch
+Until we figure out how to not fetch Milo's Gnav, keep these 2 styles
+*/
+
+header .gnav-wrapper {
+  height: 0 !important;
+  min-height: 0 !important;
+}
+
+header ~ main {
+  margin-top: 0 !important;
+  top: 0;
 }
 
 /* buttons */

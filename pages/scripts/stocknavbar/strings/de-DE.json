@@ -58,5 +58,5 @@
   "navbar.profile.settings.change": "Ändern",
   "navbar.profile.settings.selected.standardassets": "Ausgewähltes Profil (Standard-Stockmedien)",
   "navbar.profile.settings.selected.otherassetstypes": "Ausgewähltes Profil (sonstige Stockmediumtypen)",
-  "navbar.errorMsg.profileSwitchingGeneric": "Ein Fehler ist aufgetreten. Aufgrund technischer Schwierigkeiten konnte dein Konto nicht geladen werden. Bitte versuche es in Kürze erneut.",
+  "navbar.errorMsg.profileSwitchingGeneric": "Ein Fehler ist aufgetreten. Aufgrund technischer Schwierigkeiten konnte dein Konto nicht geladen werden. Bitte versuche es in Kürze erneut."
 }

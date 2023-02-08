@@ -71480,7 +71480,7 @@ function $7a7ee07ed9672d27$var$WrappedApp() {
     const spectrumContainer = document.createElement("div");
     document.body.appendChild(spectrumContainer);
     // dynamically fetch localized strings file
-    const [localizedStrings, setLocalizedStrings] = (0, $6Yugf.useState)({});
+    const [localizedStrings, setLocalizedStrings] = (0, $6Yugf.useState)(null);
     const getRouteBasename = ()=>{
         const { pathname: pathname  } = window.location;
         const urlParts = pathname.split("/");
@@ -71496,9 +71496,7 @@ function $7a7ee07ed9672d27$var$WrappedApp() {
     const isGSCCountry = (0, $34cf68dd6793f12b$export$2e2bcd8739ae039).has(country);
     const isGloballySafeCollectionEnabled = isGSCLocale || isGSCCountry;
     (0, $6Yugf.useEffect)(()=>{
-        fetch(`/pages/scripts/stocknavbar/strings/${languageTag}.json`).then((res)=>res.json()).then((response)=>{
-            setLocalizedStrings(response);
-        }).catch((error)=>console.log(error));
+        fetch(`/pages/scripts/stocknavbar/strings/${languageTag}.json`).then((res)=>res.json()).then((response)=>setLocalizedStrings(response)).catch((error)=>console.log(error));
     // import(`/pages/scripts/stocknavbar/strings/fr-FR.js`).then(({default: strings}) => setLocalizedStrings(strings));
     }, []);
     const context = {
@@ -71525,7 +71523,7 @@ function $7a7ee07ed9672d27$var$WrappedApp() {
     //     console.log('only core groups and hosts enabled - C0001');
     //     checkConsent();
     // });
-    return /*#__PURE__*/ (0, (/*@__PURE__*/$parcel$interopDefault($6Yugf))).createElement((0, $98bp7.CoreContextProvider), context, /*#__PURE__*/ (0, (/*@__PURE__*/$parcel$interopDefault($6Yugf))).createElement((0, $k5WHN.default), {
+    if (localizedStrings) return /*#__PURE__*/ (0, (/*@__PURE__*/$parcel$interopDefault($6Yugf))).createElement((0, $98bp7.CoreContextProvider), context, /*#__PURE__*/ (0, (/*@__PURE__*/$parcel$interopDefault($6Yugf))).createElement((0, $k5WHN.default), {
         locale: languageTag,
         defaultLocale: languageTag,
         messages: localizedStrings
@@ -71535,6 +71533,7 @@ function $7a7ee07ed9672d27$var$WrappedApp() {
     }, /*#__PURE__*/ (0, (/*@__PURE__*/$parcel$interopDefault($6Yugf))).createElement((0, $5f4ec7f5660797bb$export$e01c80a1d5d7bd15), null, /*#__PURE__*/ (0, (/*@__PURE__*/$parcel$interopDefault($6Yugf))).createElement((0, $aBzrz.default), {
         isGloballySafeCollectionEnabled: isGloballySafeCollectionEnabled
     })))));
+    return /*#__PURE__*/ (0, (/*@__PURE__*/$parcel$interopDefault($6Yugf))).createElement((0, (/*@__PURE__*/$parcel$interopDefault($6Yugf))).Fragment, null);
 }
 const $7a7ee07ed9672d27$var$container = document.createElement("div");
 // document.getElementsByClassName('navbar-placeholder')[0].append(container);

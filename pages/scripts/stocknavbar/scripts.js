@@ -28,7 +28,7 @@ function WrappedApp() {
   document.body.appendChild(spectrumContainer);
 
   // dynamically fetch localized strings file
-  const [localizedStrings, setLocalizedStrings] = useState({});
+  const [localizedStrings, setLocalizedStrings] = useState(null);
 
   const getRouteBasename = () => {
     const { pathname } = window.location;
@@ -54,9 +54,7 @@ function WrappedApp() {
   useEffect(() => {
     fetch(`/pages/scripts/stocknavbar/strings/${languageTag}.json`)
       .then(res => res.json())
-      .then((response) => {
-        setLocalizedStrings(response);
-      })
+      .then(response => setLocalizedStrings(response))
       .catch(error => console.log(error));
   
     // import(`/pages/scripts/stocknavbar/strings/fr-FR.js`).then(({default: strings}) => setLocalizedStrings(strings));
@@ -92,6 +90,7 @@ function WrappedApp() {
 //     checkConsent();
 // });
 
+if (localizedStrings) {
   return (
     <CoreContextProvider {...context}>
       <IntlProvider
@@ -107,6 +106,9 @@ function WrappedApp() {
       </IntlProvider>
     </CoreContextProvider>
   );
+} 
+
+  return <></>
 }
 
 const container = document.createElement('div');
